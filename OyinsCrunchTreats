@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oyin's Crunchy Treat | Handmade Snacks from Lagos</title>
+<meta name="description" content="Handmade chinchin, peanuts, kulikuli & plantain chips made fresh in Lagos. Order on WhatsApp today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF8EE;
+    --gold-light: #FDE9C0;
+    --gold-mid: #F5D9A0;
+    --gold-dark: #C8882B;
+    --brown-deep: #2C1A0E;
+    --brown-mid: #4A2E12;
+    --brown-soft: #7A4A1C;
+    --brown-faded: #A07040;
+    --orange: #B85C00;
+    --orange-hover: #9A4A00;
+    --whatsapp: #25D366;
+    --whatsapp-hover: #1EBD58;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--brown-deep); overflow-x: hidden; }
+  img, svg { display: block; }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: var(--cream); border-bottom: 1.5px solid var(--gold-mid); position: sticky; top: 0; z-index: 50; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--orange); letter-spacing: -0.3px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 14px; color: var(--brown-soft); text-decoration: none; font-weight: 500; cursor: pointer; }
+  .nav-links a:hover { color: var(--orange); }
+  .nav-cta { background: var(--whatsapp); color: #fff; border: none; padding: 9px 20px; border-radius: 50px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
+  .nav-cta:hover { background: var(--whatsapp-hover); }
+
+  .hero { padding: 72px 40px 60px; text-align: center; background: var(--cream); }
+  .hero-eyebrow { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 18px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: var(--brown-deep); line-height: 1.15; max-width: 680px; margin: 0 auto 20px; }
+  .hero-title em { font-style: italic; color: var(--orange); }
+  .hero-sub { font-size: 17px; color: var(--brown-soft); max-width: 460px; margin: 0 auto 36px; line-height: 1.65; }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-wa { background: var(--whatsapp); color: #fff; border: none; padding: 14px 28px; border-radius: 50px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-wa:hover { background: var(--whatsapp-hover); }
+  .btn-ghost { background: transparent; color: var(--orange); border: 2px solid var(--orange); padding: 13px 26px; border-radius: 50px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { background: var(--gold-light); }
+
+  .snack-strip { background: var(--orange); color: #fff; padding: 13px 40px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+  .snack-strip span { opacity: 0.88; }
+  .snack-strip span:before { content: "✦ "; opacity: 0.6; }
+
+  .section { padding: 64px 40px; }
+  .section-label { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dark); font-weight: 500; margin-bottom: 10px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--brown-deep); margin-bottom: 12px; }
+  .section-sub { font-size: 16px; color: var(--brown-soft); line-height: 1.65; max-width: 560px; }
+
+  .snacks-category { margin-top: 40px; }
+  .category-heading { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--brown-faded); font-weight: 500; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-mid); }
+  .snacks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 16px; margin-bottom: 36px; }
+  .snack-card { background: #fff; border-radius: 20px; padding: 24px 18px 20px; border: 1.5px solid var(--gold-mid); text-align: center; transition: transform 0.18s ease; }
+  .snack-card:hover { transform: translateY(-4px); }
+  .snack-icon { font-size: 40px; margin-bottom: 12px; }
+  .snack-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--brown-deep); margin-bottom: 7px; }
+  .snack-desc { font-size: 13px; color: var(--brown-soft); line-height: 1.6; }
+  .snack-tag { display: inline-block; margin-top: 12px; background: var(--gold-light); color: var(--orange-hover); font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+
+  .story { background: var(--brown-deep); color: var(--gold-light); }
+  .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto; }
+  .story-quote { font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic; color: var(--gold-mid); line-height: 1.5; margin-bottom: 20px; }
+  .story-body { font-size: 15px; line-height: 1.75; color: #D4A86A; }
+  .story-sig { margin-top: 24px; font-size: 14px; color: var(--gold-dark); font-weight: 500; }
+  .story-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .story-badge { background: #3E2510; border-radius: 16px; padding: 22px 16px; text-align: center; }
+  .story-badge-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: var(--gold-mid); }
+  .story-badge-label { font-size: 12px; color: var(--brown-faded); margin-top: 4px; }
+
+  .order-section { background: var(--cream); }
+  .order-inner { max-width: 640px; margin: 0 auto; }
+  .order-box { background: #fff; border-radius: 20px; border: 1.5px solid var(--gold-mid); padding: 36px; margin-top: 40px; }
+  .order-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--brown-deep); margin-bottom: 8px; text-align: center; }
+  .order-box > p { font-size: 14px; color: var(--brown-soft); line-height: 1.6; margin-bottom: 28px; text-align: center; }
+
+  .form-group { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--brown-mid); margin-bottom: 7px; }
+  .form-input, .form-textarea, .form-select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--gold-mid); border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--brown-deep); background: var(--cream); }
+  .form-input:focus, .form-textarea:focus, .form-select:focus { outline: none; border-color: var(--orange); }
+  .form-textarea { resize: vertical; min-height: 70px; }
+
+  .snack-checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .snack-check { display: flex; align-items: center; gap: 8px; background: var(--cream); border: 1.5px solid var(--gold-mid); border-radius: 10px; padding: 10px 12px; cursor: pointer; }
+  .snack-check input { accent-color: var(--orange); width: 16px; height: 16px; cursor: pointer; }
+  .snack-check label { font-size: 13px; color: var(--brown-mid); cursor: pointer; }
+
+  .qty-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .bank-box { background: var(--gold-light); border: 1.5px dashed var(--orange); border-radius: 14px; padding: 20px 22px; margin-bottom: 26px; }
+  .bank-box-title { font-size: 13px; font-weight: 500; color: var(--orange-hover); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .bank-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(184,92,0,0.15); }
+  .bank-row:last-child { border-bottom: none; }
+  .bank-label { font-size: 13px; color: var(--brown-soft); }
+  .bank-value { font-size: 14px; font-weight: 500; color: var(--brown-deep); display: flex; align-items: center; gap: 8px; }
+  .copy-btn { background: var(--orange); color: #fff; border: none; padding: 4px 10px; border-radius: 20px; font-size: 11px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .copy-btn:hover { background: var(--orange-hover); }
+  .bank-note { font-size: 12px; color: var(--brown-faded); margin-top: 12px; line-height: 1.5; }
+
+  .receipt-upload { border: 1.5px dashed var(--gold-mid); border-radius: 10px; padding: 16px; text-align: center; background: var(--cream); cursor: pointer; transition: border-color 0.15s ease; }
+  .receipt-upload:hover { border-color: var(--orange); }
+  .receipt-upload input { display: none; }
+  .receipt-upload-label { font-size: 13px; color: var(--brown-soft); cursor: pointer; }
+  .receipt-upload-label strong { color: var(--orange); }
+  .receipt-filename { font-size: 12px; color: var(--orange-hover); margin-top: 8px; font-weight: 500; display: none; }
+
+  .submit-btn { width: 100%; background: var(--whatsapp); color: #fff; border: none; padding: 15px; border-radius: 50px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 8px; }
+  .submit-btn:hover { background: var(--whatsapp-hover); }
+  .form-note { font-size: 12px; color: var(--brown-faded); text-align: center; margin-top: 14px; }
+  .error-msg { font-size: 12px; color: #C0392B; margin-top: 4px; display: none; }
+
+  .testimonials { background: var(--gold-light); padding: 64px 40px; }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 40px; }
+  .testi-card { background: #fff; border-radius: 16px; padding: 22px; border: 1.5px solid var(--gold-mid); }
+  .testi-stars { color: var(--gold-dark); font-size: 15px; margin-bottom: 10px; letter-spacing: 2px; }
+  .testi-text { font-size: 14px; color: var(--brown-mid); line-height: 1.65; font-style: italic; margin-bottom: 14px; }
+  .testi-name { font-size: 13px; font-weight: 500; color: var(--orange); }
+
+  .footer { background: var(--brown-deep); color: var(--brown-faded); padding: 40px; text-align: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--gold-mid); margin-bottom: 10px; }
+  .footer-tagline { font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+  .footer-wa { display: inline-flex; align-items: center; gap: 8px; background: var(--whatsapp); color: #fff; padding: 11px 24px; border-radius: 50px; font-size: 14px; font-weight: 500; text-decoration: none; margin-bottom: 24px; font-family: 'DM Sans', sans-serif; }
+  .footer-wa:hover { background: var(--whatsapp-hover); }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+  .footer-links a { color: var(--gold-dark); font-size: 14px; text-decoration: none; font-weight: 500; }
+  .footer-copy { font-size: 12px; color: var(--brown-soft); }
+
+  @media (max-width: 700px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 20px 40px; }
+    .hero-title { font-size: 36px; }
+    .section { padding: 48px 20px; }
+    .story-inner { grid-template-columns: 1fr; gap: 32px; }
+    .qty-row { grid-template-columns: 1fr; }
+    .order-box { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Oyin's Crunchy Treat</div>
+  <div class="nav-links">
+    <a href="#snacks">Our Snacks</a>
+    <a href="#story">Our Story</a>
+    <a href="#order">Order</a>
+  </div>
+  <a class="nav-cta" href="https://wa.me/2348142889693?text=Hi%20Oyin!%20I%27d%20like%20to%20place%20an%20order%20%F0%9F%8D%AA" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.526 5.845L.057 23.882l6.194-1.624A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.637-.49-5.16-1.348l-.369-.219-3.677.964.983-3.588-.24-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Order Now
+  </a>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Handmade Snacks · Lagos, Nigeria</p>
+  <h1 class="hero-title">Snacks that take you <em>straight back home.</em></h1>
+  <p class="hero-sub">Crispy chinchin, crunchy kulikuli, sweet plantain chips, and more — all made by hand, with love, right here in Lagos.</p>
+  <div class="hero-btns">
+    <a class="btn-wa" href="#order">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.526 5.845L.057 23.882l6.194-1.624A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.637-.49-5.16-1.348l-.369-.219-3.677.964.983-3.588-.24-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Order Now
+    </a>
+    <a class="btn-ghost" href="#snacks">See all snacks</a>
+  </div>
+</section>
+
+<div class="snack-strip">
+  <span>Plain Chinchin</span>
+  <span>Coconut Chinchin</span>
+  <span>Chocolate Chinchin</span>
+  <span>Special Chinchin</span>
+  <span>Peanuts</span>
+  <span>Kulikuli</span>
+  <span>Plantain Chips</span>
+</div>
+
+<section class="section" id="snacks" style="background: var(--cream);">
+  <p class="section-label">Our Snacks</p>
+  <h2 class="section-title">Seven ways to crunch</h2>
+  <p class="section-sub">Every snack is made in small batches — fresh, honest, and full of that home-cooked goodness.</p>
+
+  <div class="snacks-category">
+    <p class="category-heading">Chinchin</p>
+    <div class="snacks-grid">
+      <div class="snack-card">
+        <div class="snack-icon">🍪</div>
+        <div class="snack-name">Plain Original</div>
+        <div class="snack-desc">The classic you grew up on. Sweet, crispy, timeless.</div>
+        <span class="snack-tag">Fan Favorite</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-icon">🥥</div>
+        <div class="snack-name">Coconut</div>
+        <div class="snack-desc">Real coconut flavor baked into every golden bite.</div>
+        <span class="snack-tag">Tropical</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-icon">🍫</div>
+        <div class="snack-name">Chocolate</div>
+        <div class="snack-desc">Rich, indulgent, and still delightfully crunchy.</div>
+        <span class="snack-tag">Indulgent</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-icon">✨</div>
+        <div class="snack-name">Special Flavor</div>
+        <div class="snack-desc">Something different. Something Oyin. Taste it to believe it.</div>
+        <span class="snack-tag">Must Try</span>
+      </div>
+    </div>
+
+    <p class="category-heading">More Crunchy Favourites</p>
+    <div class="snacks-grid">
+      <div class="snack-card">
+        <div class="snack-icon">🥜</div>
+        <div class="snack-name">Peanuts</div>
+        <div class="snack-desc">Roasted to perfection. Great on its own or with a cold drink.</div>
+        <span class="snack-tag">Classic</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-icon">🫙</div>
+        <div class="snack-name">Kulikuli</div>
+        <div class="snack-desc">A Nigerian staple, made the proper way. Crunchy and nutty.</div>
+        <span class="snack-tag">Traditional</span>
+      </div>
+      <div class="snack-card">
+        <div class="snack-icon">🍌</div>
+        <div class="snack-name">Plantain Chips</div>
+        <div class="snack-desc">Thinly sliced, perfectly fried. Impossible to stop at one.</div>
+        <span class="snack-tag">Irresistible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section story" id="story">
+  <div class="story-inner">
+    <div>
+      <p class="story-quote">"I didn't just want to sell snacks. I wanted to give people that feeling — home in every bite."</p>
+      <p class="story-body">Oyin's Crunchy Treat was born from a love of good food and even better memories. Every bag is made by hand, with care, right here in Lagos — no shortcuts, no compromises.</p>
+      <p class="story-sig">— Oyindamola, Founder</p>
+    </div>
+    <div class="story-visual">
+      <div class="story-badge"><div class="story-badge-num">7</div><div class="story-badge-label">Snack varieties</div></div>
+      <div class="story-badge"><div class="story-badge-num">100%</div><div class="story-badge-label">Handmade</div></div>
+      <div class="story-badge"><div class="story-badge-num">🏠</div><div class="story-badge-label">Lagos-made</div></div>
+      <div class="story-badge"><div class="story-badge-num">❤️</div><div class="story-badge-label">With love</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section order-section" id="order">
+  <div class="order-inner">
+    <p class="section-label">Order</p>
+    <h2 class="section-title">Ready to crunch?</h2>
+    <p class="section-sub">Fill in your order below, send payment to the account shown, then attach your receipt — we'll confirm everything on WhatsApp.</p>
+
+    <div class="order-box">
+      <h3>Place Your Order</h3>
+      <p>Send payment first, then fill the form below with your receipt attached.</p>
+
+      <div class="bank-box">
+        <p class="bank-box-title">Pay To This Account</p>
+        <div class="bank-row">
+          <span class="bank-label">Bank</span>
+          <span class="bank-value">Kuda <button class="copy-btn" onclick="copyText('Kuda', this)">Copy</button></span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-label">Account Number</span>
+          <span class="bank-value">2006754071 <button class="copy-btn" onclick="copyText('2006754071', this)">Copy</button></span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-label">Account Name</span>
+          <span class="bank-value">Oyindamola Precious</span>
+        </div>
+        <p class="bank-note">Send your payment first, then take a screenshot of your transfer receipt and attach it below before submitting your order.</p>
+      </div>
+
+      <form id="orderForm">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input class="form-input" type="text" id="custName" placeholder="e.g. Ada Johnson" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Which snacks would you like? *</label>
+          <div class="snack-checks">
+            <div class="snack-check"><input type="checkbox" id="snack1" value="Plain Chinchin"><label for="snack1">Plain Chinchin</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack2" value="Coconut Chinchin"><label for="snack2">Coconut Chinchin</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack3" value="Chocolate Chinchin"><label for="snack3">Chocolate Chinchin</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack4" value="Special Chinchin"><label for="snack4">Special Chinchin</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack5" value="Peanuts"><label for="snack5">Peanuts</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack6" value="Kulikuli"><label for="snack6">Kulikuli</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack7" value="Plantain Chips"><label for="snack7">Plantain Chips</label></div>
+          </div>
+          <p class="error-msg" id="snackError">Please select at least one snack.</p>
+        </div>
+
+        <div class="qty-row">
+          <div class="form-group">
+            <label class="form-label">Quantity (bags) *</label>
+            <input class="form-input" type="number" id="custQty" min="1" value="1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Location *</label>
+            <input class="form-input" type="text" id="custLocation" placeholder="e.g. Yaba, Lagos" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Receipt *</label>
+          <div class="receipt-upload" onclick="document.getElementById('receiptFile').click()">
+            <input type="file" id="receiptFile" accept="image/*">
+            <p class="receipt-upload-label"><strong>Tap to attach</strong> your payment receipt screenshot</p>
+            <p class="receipt-filename" id="receiptFilename"></p>
+          </div>
+          <p class="error-msg" id="receiptError">Please attach your payment receipt.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Anything else we should know?</label>
+          <textarea class="form-textarea" id="custNotes" placeholder="Optional notes (e.g. preferred delivery time)"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.526 5.845L.057 23.882l6.194-1.624A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.637-.49-5.16-1.348l-.369-.219-3.677.964.983-3.588-.24-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Send Order on WhatsApp
+        </button>
+        <p class="form-note">This opens WhatsApp with your order details filled in — please attach your receipt image to the chat before sending.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <p class="section-label">What People Say</p>
+  <h2 class="section-title">The crunch speaks for itself</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The coconut chinchin? Absolutely unreal. I finished the whole bag in one evening — no regrets."</p>
+      <p class="testi-name">— Happy Customer</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Tastes exactly like the chinchin my grandma used to make. That crunch hits different."</p>
+      <p class="testi-name">— First-time buyer</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The plantain chips are everything! Ordered alongside the kulikuli and it was the perfect combo."</p>
+      <p class="testi-name">— Repeat customer</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">Oyin's Crunchy Treat</div>
+  <p class="footer-tagline">Handmade snacks with love, from Lagos to your hands. 🇳🇬</p>
+  <a class="footer-wa" href="https://wa.me/2348142889693?text=Hi%20Oyin!%20I%27d%20like%20to%20place%20an%20order%20%F0%9F%8D%AA" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.526 5.845L.057 23.882l6.194-1.624A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.637-.49-5.16-1.348l-.369-.219-3.677.964.983-3.588-.24-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Order on WhatsApp
+  </a>
+  <div class="footer-links">
+    <a href="#snacks">Our Snacks</a>
+    <a href="#story">Our Story</a>
+  </div>
+  <p class="footer-copy">© 2025 Oyin's Crunchy Treat · All rights reserved</p>
+</footer>
+
+<script>
+  const WHATSAPP_NUMBER = "2348142889693";
+
+  function copyText(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  }
+
+  document.getElementById('receiptFile').addEventListener('change', function(e) {
+    const filenameEl = document.getElementById('receiptFilename');
+    if (e.target.files.length > 0) {
+      filenameEl.textContent = "✓ " + e.target.files[0].name + " attached";
+      filenameEl.style.display = 'block';
+      document.getElementById('receiptError').style.display = 'none';
+    }
+  });
+
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('custName').value.trim();
+    const qty = document.getElementById('custQty').value;
+    const location = document.getElementById('custLocation').value.trim();
+    const notes = document.getElementById('custNotes').value.trim();
+    const receiptFile = document.getElementById('receiptFile').files[0];
+
+    const checkedSnacks = Array.from(document.querySelectorAll('.snack-check input:checked')).map(cb => cb.value);
+    const snackError = document.getElementById('snackError');
+    const receiptError = document.getElementById('receiptError');
+
+    let hasError = false;
+
+    if (checkedSnacks.length === 0) {
+      snackError.style.display = 'block';
+      hasError = true;
+    } else {
+      snackError.style.display = 'none';
+    }
+
+    if (!receiptFile) {
+      receiptError.style.display = 'block';
+      hasError = true;
+    } else {
+      receiptError.style.display = 'none';
+    }
+
+    if (hasError) return;
+
+    let message = `Hi Oyin! I'd like to place an order 🍪\n\n`;
+    message += `*Name:* ${name}\n`;
+    message += `*Snacks:* ${checkedSnacks.join(', ')}\n`;
+    message += `*Quantity:* ${qty} bag(s)\n`;
+    message += `*Delivery Location:* ${location}\n`;
+    if (notes) {
+      message += `*Notes:* ${notes}\n`;
+    }
+    message += `\n📎 I've made payment to your Kuda account (2006754071) — attaching my receipt screenshot now!`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    window.open(waUrl, '_blank');
+  });
+</script>
+
+</body>
+</html>
