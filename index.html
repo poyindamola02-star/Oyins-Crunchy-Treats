@@ -63,6 +63,7 @@
   .snack-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--brown-deep); margin-bottom: 7px; }
   .snack-desc { font-size: 13px; color: var(--brown-soft); line-height: 1.6; }
   .snack-tag { display: inline-block; margin-top: 12px; background: var(--gold-light); color: var(--orange-hover); font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+  .snack-price { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--orange); margin-top: 10px; }
 
   .story { background: var(--brown-deep); color: var(--gold-light); }
   .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 900px; margin: 0 auto; }
@@ -193,24 +194,28 @@
         <div class="snack-icon">🍪</div>
         <div class="snack-name">Plain Original</div>
         <div class="snack-desc">The classic you grew up on. Sweet, crispy, timeless.</div>
+        <div class="snack-price">₦1,000 / bag</div>
         <span class="snack-tag">Fan Favorite</span>
       </div>
       <div class="snack-card">
         <div class="snack-icon">🥥</div>
         <div class="snack-name">Coconut</div>
         <div class="snack-desc">Real coconut flavor baked into every golden bite.</div>
+        <div class="snack-price">₦1,300 / bag</div>
         <span class="snack-tag">Tropical</span>
       </div>
       <div class="snack-card">
         <div class="snack-icon">🍫</div>
         <div class="snack-name">Chocolate</div>
         <div class="snack-desc">Rich, indulgent, and still delightfully crunchy.</div>
+        <div class="snack-price">₦1,500 / bag</div>
         <span class="snack-tag">Indulgent</span>
       </div>
       <div class="snack-card">
         <div class="snack-icon">✨</div>
         <div class="snack-name">Special Flavor</div>
         <div class="snack-desc">Something different. Something Oyin. Taste it to believe it.</div>
+        <div class="snack-price">₦1,200 / bag</div>
         <span class="snack-tag">Must Try</span>
       </div>
     </div>
@@ -221,18 +226,21 @@
         <div class="snack-icon">🥜</div>
         <div class="snack-name">Peanuts</div>
         <div class="snack-desc">Roasted to perfection. Great on its own or with a cold drink.</div>
+        <div class="snack-price">₦2,000 / bag</div>
         <span class="snack-tag">Classic</span>
       </div>
       <div class="snack-card">
         <div class="snack-icon">🫙</div>
         <div class="snack-name">Kulikuli</div>
         <div class="snack-desc">A Nigerian staple, made the proper way. Crunchy and nutty.</div>
+        <div class="snack-price">₦1,500 / bag</div>
         <span class="snack-tag">Traditional</span>
       </div>
       <div class="snack-card">
         <div class="snack-icon">🍌</div>
         <div class="snack-name">Plantain Chips</div>
         <div class="snack-desc">Thinly sliced, perfectly fried. Impossible to stop at one.</div>
+        <div class="snack-price">₦1,500 / bag</div>
         <span class="snack-tag">Irresistible</span>
       </div>
     </div>
@@ -291,13 +299,13 @@
         <div class="form-group">
           <label class="form-label">Which snacks would you like? *</label>
           <div class="snack-checks">
-            <div class="snack-check"><input type="checkbox" id="snack1" value="Plain Chinchin"><label for="snack1">Plain Chinchin</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack2" value="Coconut Chinchin"><label for="snack2">Coconut Chinchin</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack3" value="Chocolate Chinchin"><label for="snack3">Chocolate Chinchin</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack4" value="Special Chinchin"><label for="snack4">Special Chinchin</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack5" value="Peanuts"><label for="snack5">Peanuts</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack6" value="Kulikuli"><label for="snack6">Kulikuli</label></div>
-            <div class="snack-check"><input type="checkbox" id="snack7" value="Plantain Chips"><label for="snack7">Plantain Chips</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack1" value="Plain Chinchin" data-price="1000"><label for="snack1">Plain Chinchin — ₦1,000</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack2" value="Coconut Chinchin" data-price="1300"><label for="snack2">Coconut Chinchin — ₦1,300</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack3" value="Chocolate Chinchin" data-price="1500"><label for="snack3">Chocolate Chinchin — ₦1,500</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack4" value="Special Chinchin" data-price="1200"><label for="snack4">Special Chinchin — ₦1,200</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack5" value="Peanuts" data-price="2000"><label for="snack5">Peanuts — ₦2,000</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack6" value="Kulikuli" data-price="1500"><label for="snack6">Kulikuli — ₦1,500</label></div>
+            <div class="snack-check"><input type="checkbox" id="snack7" value="Plantain Chips" data-price="1500"><label for="snack7">Plantain Chips — ₦1,500</label></div>
           </div>
           <p class="error-msg" id="snackError">Please select at least one snack.</p>
         </div>
@@ -311,6 +319,15 @@
             <label class="form-label">Delivery Location *</label>
             <input class="form-input" type="text" id="custLocation" placeholder="e.g. Yaba, Lagos" required>
           </div>
+        </div>
+
+        <div class="bank-box" style="margin-bottom: 20px;">
+          <p class="bank-box-title">Order Total</p>
+          <div class="bank-row" style="border-bottom: none;">
+            <span class="bank-label">Estimated Total</span>
+            <span class="bank-value" id="orderTotal" style="font-size:18px;">₦0</span>
+          </div>
+          <p class="bank-note">Total = (sum of selected snack prices) × quantity of bags.</p>
         </div>
 
         <div class="form-group">
@@ -385,6 +402,25 @@
     });
   }
 
+  function formatNaira(amount) {
+    return "₦" + amount.toLocaleString('en-NG');
+  }
+
+  function calculateTotal() {
+    const qty = parseInt(document.getElementById('custQty').value, 10) || 0;
+    const checkedInputs = Array.from(document.querySelectorAll('.snack-check input:checked'));
+    const pricePerBagSum = checkedInputs.reduce((sum, cb) => sum + parseInt(cb.dataset.price, 10), 0);
+    const total = pricePerBagSum * qty;
+    document.getElementById('orderTotal').textContent = formatNaira(total);
+    return total;
+  }
+
+  document.querySelectorAll('.snack-check input').forEach(cb => {
+    cb.addEventListener('change', calculateTotal);
+  });
+  document.getElementById('custQty').addEventListener('input', calculateTotal);
+  calculateTotal();
+
   document.getElementById('receiptFile').addEventListener('change', function(e) {
     const filenameEl = document.getElementById('receiptFilename');
     if (e.target.files.length > 0) {
@@ -425,10 +461,13 @@
 
     if (hasError) return;
 
+    const total = calculateTotal();
+
     let message = `Hi Oyin! I'd like to place an order 🍪\n\n`;
     message += `*Name:* ${name}\n`;
     message += `*Snacks:* ${checkedSnacks.join(', ')}\n`;
     message += `*Quantity:* ${qty} bag(s)\n`;
+    message += `*Estimated Total:* ${formatNaira(total)}\n`;
     message += `*Delivery Location:* ${location}\n`;
     if (notes) {
       message += `*Notes:* ${notes}\n`;
